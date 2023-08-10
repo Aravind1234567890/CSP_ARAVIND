@@ -1,0 +1,43 @@
+<div class="body">
+<app-navbar></app-navbar>
+<div>
+    <div class="container mt-5">
+    <div class="card">
+     <div class="card-header">
+         <h4>UPDATE DETAILS
+             
+         </h4>
+     </div>
+     <div class="card-body">
+         <form (ngsubmit)="savepurification()">
+             <div class="mb-3">
+                 <label>PLANT NAME(R)</label>
+                 <input type="text" [(ngModel)]="plant_N" plantname="plantname" class="form-control"/>
+             </div>
+             <div class="mb-3">
+                 <label>PLANT NAME</label>
+                 <input type="text" [(ngModel)]="plant_n" plantname="plantname" class="form-control"/>
+             </div>
+             <div class="mb-3">
+                 <label>PLANT LOCATION</label>
+                 <input type="text" [(ngModel)]="plant_l" plantname="plant loction" class="form-control"/>
+             </div>
+             <div class="mb-3">
+                 <label>TANK CAPACITY</label>
+                 <input type="text" [(ngModel)]="tank_c" plantname="tank capacity" class="form-control"/>
+             </div>
+             <div class="mb-3">
+                 <label>AMOUNT OF CHLORIN</label>
+                 <input type="text" [(ngModel)]="chlorine_a" plantname="amount chlorine" class="form-control"/>
+             </div>
+             <div class="mb-3">
+                <button>SUBMIT</button>
+             </div>
+             
+         </form>
+ 
+     </div>
+    </div>
+ </div>
+</div>
+ 

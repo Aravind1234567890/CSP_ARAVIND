@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="./register.component.css">
+</head>
+<body>
+  <div class="container">
+    <form onsubmit="return validateForm()" method="post">
+      <h2>Registration Form</h2>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="User.username" required>
+      <span id="usernameError" class="error"></span>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="User.email" required>
+      <span id="emailError" class="error"></span>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="User.password" required>
+      <span id="passwordError" class="error"></span>
+
+     
+      <input type="submit" value="Register" routerLink="/login">
+    </form>
+  </div>
+
+  <script src="./registe.js"></script>
+</body>
+</html>
+
+

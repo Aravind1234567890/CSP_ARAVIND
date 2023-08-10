@@ -1,0 +1,58 @@
+<div class="body">
+<app-navbar></app-navbar>
+<div class="d-block mx-auto w-50">
+    <label for="RollNumber">Roll Number</label>
+    <input type="text" name="RollNumber" id="RollNumber" class="form-control" [(ngModel)]="Roll"
+        placeholder=" ">
+    <div class="d-flex my-2">
+        <input type="submit" value="Get all" class="btn btn-primary" (click)="Read('All')">
+        <input type="submit" [value]="'Get '+ Roll" class="btn btn-primary mx-1" (click)="Read(Roll)">
+    </div>
+    <p *ngIf="!(Results.length!=0 && GotResult)" class="text-danger">No Result to Show</p>
+</div>
+<table class="table w-50  mx-auto" *ngIf="Results.length!=0 && GotResult">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">plant Name</th>
+            <th scope="col">plant location</th>
+            <th scope="col">capacity of tank</th>
+            <th scope="col">amount of chlorin</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Data of Results">
+            <th scope="row">{{Data[0]}}</th>
+            <td>{{Data[1]}}</td>
+            <td>{{Data[2]}}</td>
+            <td>{{Data[3]}}</td>
+            <td><input type="button" role="button" class="btn btn-danger" value="delete" (click)="Delete(Data[0])">
+            </td>
+            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="Roll = Data[0]">
+                    Update
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Updated Values</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" name="plant Name" id="plant Name" placeholder="plant Name" class="form-control my-1" [(ngModel)]="UpdatedUser.plant_n">
+          <input type="text" name="plant location" id="plant location" placeholder="plant location" class="form-control my-1" [(ngModel)]="UpdatedUser.plant_l">
+          <input type="text" name="capacity of tank" id="capacity of tank" placeholder="capacity of tank" class="form-control my-1" [(ngModel)]="UpdatedUser.tank_c">
+          <input type="text" name="amount of chlorine" id="amount of chlorine" placeholder="amount of chlorine" class="form-control my-1" [(ngModel)]="UpdatedUser.chlorine_a">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)="Update(Roll,UpdatedUser)">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

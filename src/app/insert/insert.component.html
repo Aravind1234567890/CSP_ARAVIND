@@ -1,0 +1,31 @@
+<div class="body">
+    <app-navbar></app-navbar>
+    <div>
+
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4>INSERT DETAILS
+
+
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <label for="plant Name" class="form-label">PLANT NAME:</label>
+                        <input type="text" name="plant Name" id="plant Name" placeholder=" enter plant name" class="form-control" [(ngModel)]="User.plant_n" >
+                        <label for="plant location" class="form-label">PLANT LOCATION</label>
+                        <input type="text" name="plant location" id="plant location" placeholder=" enter plant location" class="form-control" [(ngModel)]="User.plant_l" >
+                        <label for="capacity of tank" class="form-label">CAPACITY OF TANK</label>
+                        <input type="text" name="capacity of tank" id="capacity of tank" placeholder=" enter tank capacity" class="form-control" [(ngModel)]="User.tank_c" >
+                        <label for="amount of chlorine" class="form-label">AMOUNT OF CHLORINE</label>
+                        <input type="text" name="amount of chlorine" id="amount of chlorine" placeholder=" enter amount of chlorin" class="form-control" [(ngModel)]="User.chlorine_a" >
+                        <input type="submit" value="Insert" class="btn btn-success my-2" (click)="Insert()">
+                        <div class="alert alert-success my-2" *ngIf="!(SuccessMsg =='')">{{SuccessMsg}}</div>
+                        <div class="alert alert-danger my-2" *ngIf="!(ErrorMsg =='')">{{ErrorMsg}}</div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>

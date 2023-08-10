@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <link rel="stylesheet" type="text/css" href="./login.component.css">
+</head>
+<body>
+  <div class="container">
+    <form onsubmit="return validateForm()" method="post">
+      <h2>Login Form</h2>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <span id="usernameError" class="error"></span>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <span id="passwordError" class="error"></span>
+
+      <input type="submit" value="Login" routerLink="/home2">
+    </form>
+  </div>
+
+  <script src="./login.js"></script>
+</body>
+</html>
